@@ -20,4 +20,17 @@
           FROM  tbl_member
     </select>
 
+    <select id="selectMember" resultType="com.nicekkong.domain.Member">
+        SELECT  userid, userpw, username, email, regdate, upddate
+          FROM  tbl_member
+         WHERE  userid = #{userid}
+    </select>
+
+    <select id="selectMemberWithPw" resultType="com.nicekkong.domain.Member">
+        SELECT  userid, userpw, username, email, regdate, upddate
+          FROM  tbl_member
+         WHERE  userid = #{userid}
+           AND  userpw = #{userpw}
+    </select>
+
 </mapper>

@@ -58,4 +58,16 @@ public class MemberDAOTest {
         members.toString();
         logger.debug("====================> 전체멤버조회하기_테스트 종료 <============================\n");
     }
+
+    @Test
+    public void 아이디_회원조회하기_테스트() throws Exception {
+
+        Member member = dao.readMember("0003");
+    }
+
+    @Test
+    public void 아이디_패스워_드회원조회하기_테스트() throws Exception {
+
+        Member member = dao.readMemberWithPw("0003", "0003");
+    }
 }

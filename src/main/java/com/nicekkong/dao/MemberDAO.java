@@ -13,5 +13,9 @@ public interface MemberDAO {
 
     public void insertMember(Member member);
 
+    public Member readMember(String userid) throws Exception;
+
+    public Member readMemberWithPw(String userid, String userpw) throws Exception;
+
     public List<Member> getAllMember();
 }
