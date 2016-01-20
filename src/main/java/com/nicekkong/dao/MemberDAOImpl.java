@@ -44,11 +44,11 @@ public class MemberDAOImpl implements MemberDAO {
     }
 
     @Override
-    public Member readMemberWithPw(String userid, String userpw) throws Exception {
+    public Member readMemberWithPw(String user_id, String user_pw) throws Exception {
         Map<String, Object> paramMap = new HashMap<String, Object>();
 
-        paramMap.put("userid", userid);
-        paramMap.put("userpw", userpw);
+        paramMap.put("userid", user_id);
+        paramMap.put("userpw", user_pw);
 
         return sqlSession.selectOne(namespace + ".selectMemberWithPw", paramMap);
     }
