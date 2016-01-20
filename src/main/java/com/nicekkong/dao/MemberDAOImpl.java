@@ -60,6 +60,11 @@ public class MemberDAOImpl implements MemberDAO {
         logger.debug(paramMap.toString());
         logger.debug("New Feature2");
 
+
+        logger.debug("New Release 2.0.0");
+
+
+
         return sqlSession.selectOne(namespace + ".selectMemberWithPw", paramMap);
     }
 
