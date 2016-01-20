@@ -2,6 +2,8 @@ package com.nicekkong.dao;
 
 import com.nicekkong.domain.Member;
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
@@ -20,6 +22,8 @@ public class MemberDAOImpl implements MemberDAO {
     private SqlSession sqlSession;
 
     private static final String namespace = "com.nicekkong.mapper.MemberMapper";
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
     @Override
@@ -49,6 +53,8 @@ public class MemberDAOImpl implements MemberDAO {
 
         paramMap.put("userid", user_id);
         paramMap.put("userpw", user_pw);
+
+        logger.debug(paramMap.toString());
 
         return sqlSession.selectOne(namespace + ".selectMemberWithPw", paramMap);
     }
