@@ -34,7 +34,6 @@ public class MemberDAOImpl implements MemberDAO {
     @Override
     public void insertMember(Member member) {
         sqlSession.insert(namespace + ".insertMember" , member);
-
     }
 
     @Override
@@ -56,6 +55,7 @@ public class MemberDAOImpl implements MemberDAO {
 
         logger.debug(paramMap.toString());
         logger.debug("Add Logger One more");
+        logger.debug("Commit for New_Feature!!");
 
         return sqlSession.selectOne(namespace + ".selectMemberWithPw", paramMap);
     }
